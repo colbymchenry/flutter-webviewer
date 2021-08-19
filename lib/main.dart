@@ -45,12 +45,12 @@ class _WebViewExampleState extends State<WebViewExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.black, toolbarHeight: 0.0),
+      // appBar: AppBar(backgroundColor: Colors.black, toolbarHeight: 0.0),
       // We're using a Builder here so we have a context that is below the Scaffold
       // to allow calling Scaffold.of(context) so we can show a snackbar.
       body: Builder(builder: (BuildContext context) {
         return WebView(
-          initialUrl: 'https://flutter.dev',
+          initialUrl: 'ws://127.0.0.1:3001',
           javascriptMode: JavascriptMode.unrestricted,
           onWebViewCreated: (WebViewController webViewController) {
             _controller.complete(webViewController);
@@ -78,7 +78,7 @@ class _WebViewExampleState extends State<WebViewExample> {
           gestureNavigationEnabled: true,
         );
       }),
-      floatingActionButton: favoriteButton(),
+      // floatingActionButton: favoriteButton(),
     );
   }
 
